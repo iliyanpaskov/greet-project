@@ -1,0 +1,13 @@
+@use '../../global-styles/' as gs;
+
+.filter__sorter__wrapper {
+    position: sticky;
+    top: 0.5rem;
+    width: 80%;
+    height: 4rem;
+    background: gs.$light-color;
+    border-radius: 1.5rem;
+    margin-inline:auto ;
+    max-width: 75rem;
+    
+}

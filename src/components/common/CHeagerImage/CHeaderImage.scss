@@ -1,0 +1,15 @@
+@use '../../../global-styles/' as gs;
+
+.header__image__wrapper {
+    height: 21rem;
+    z-index: -1;
+    
+    &>img {
+        height: 100%;
+        @include gs.display-flex(column,flex-start,flex-start);
+        width: 100%;
+        object-fit: cover;
+        object-position: top;
+        
+    }
+}
