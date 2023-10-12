@@ -72,3 +72,4 @@ export interface IProduct {
 export interface IProductsData {
     products: IProduct[]
 }
+

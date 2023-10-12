@@ -1,12 +1,13 @@
 @use '../../global-styles/' as gs;
 
 .main {
-    width: 85%;
+    width: 90%;
     margin-inline: auto;
-    max-width: 76rem;
+    max-width: 77rem;
 
     &__form__wrapper {
         position: sticky;
+        z-index: 3;
         top: 0.3rem;
         width: 90%;
         height: 4rem;
@@ -18,5 +19,12 @@
         @include gs.shadow(10px, -3px, gs.$dark-shadow-color);
         @include gs.display-flex(row, space-between, center);
         padding: 1rem 2rem;
+    }
+
+    &__products__list{
+        margin: 2rem 0;
+        display: grid;
+        grid-template-columns: repeat(4,1fr);
+        gap: 2rem;
     }
 }

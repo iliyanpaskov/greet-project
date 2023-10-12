@@ -10,15 +10,15 @@ interface HeaderProps { }
 export const Header: React.FC<HeaderProps> = () => {
 
     const products = useAppSelector(getAll);
-    const firstFiveImages = products.slice(0, 5);
-    console.log(firstFiveImages);
+    const headerImages = products.slice(4,9);
+    console.log(headerImages);
 
 
     return (
         <header>
             <section className='image__wrapper'>
                 {
-                    firstFiveImages.map((x: IProduct) => <CHeagerImage key={x.images[0].srcset} imageUrl={x.images[0].src} altText={x.images[0].alt} />)
+                    headerImages.map((x: IProduct) => <CHeagerImage key={x.images[0].srcset} imageUrl={x.images[0].src} altText={x.images[0].alt} />)
                 }
                 <h1>Музика</h1>
             </section>
