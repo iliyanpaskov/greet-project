@@ -13,6 +13,7 @@
         background: gs.$light-color;
         border-radius: 1.5rem;
         margin-inline: auto;
+        margin-bottom: 2rem;
         max-width: 75rem;
         @include gs.shadow(10px, -3px, gs.$dark-shadow-color);
         @include gs.display-flex(row, space-between, center);
