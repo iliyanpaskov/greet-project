@@ -2,6 +2,7 @@ import React from 'react';
 import './SortAndFilterForm.scss';
 import { CLogo } from '../common/CLogo/CLogo';
 import { CFilter } from '../common/CFilter/CFilter';
+import { CSort } from '../common/CSort/CSort';
 
 interface SortAndFilterFormProps {
 
@@ -14,6 +15,7 @@ export const SortAndFilterForm: React.FC<SortAndFilterFormProps> = () => {
                 <CLogo />
             </div>
             <CFilter />
+            <CSort/>
         </form>
     )
 }
