@@ -3,8 +3,8 @@ import { getAll } from '../../Redux/Products/ProductsSlice';
 import { IProduct } from '../../Interfaces/interfaces';
 import { getAllProducts } from '../../Redux/Products/ProductsActions';
 import { useAppDispatch, useAppSelector } from '../../Redux/hooks';
+import { SortAndFilterForm } from '../../components/SortAndFilterForm/SortAndFilterForm';
 import './MainPage.scss';
-import { CLogo } from '../../components/common/CLogo/CLogo';
 
 interface MainPageProps { }
 
@@ -20,13 +20,8 @@ export const MainPage: React.FC<MainPageProps> = () => {
 
     return (
         <main className='main'>
-            <section className='filter__sorter__wrapper'>
-                <div className='filter__sorter__logo__wrapper'>
-                    <CLogo />
-                </div>
-                <div className='filter__sorter__logo__wrapper'>
-                    <CLogo />
-                </div>
+            <section className='main__form__wrapper'>
+                <SortAndFilterForm/>
             </section>
             <section className='main__products__list'>
             {

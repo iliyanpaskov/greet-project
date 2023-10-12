@@ -17,3 +17,28 @@
     font-weight: 700;
     text-shadow: 3px 3px 5px #000;
 }
+
+@mixin select($width,$background,$select-width,$border){
+    width: $width;
+    background: $background;
+    padding: 0.1rem;
+    text-transform: capitalize;
+    border-radius: 1rem;
+
+    &>h4{
+        margin-left: 0.7rem;
+        font-size: 0.9rem;
+        font-weight: 700;
+    }
+
+    &>select{
+        width: $select-width;
+        height: 1.5rem;
+        border: none;
+        background: #fff;
+        text-align: center;
+        border-top-right-radius:1rem ;
+        border-bottom-right-radius:1rem ;
+        border-radius: $border;
+    }
+}

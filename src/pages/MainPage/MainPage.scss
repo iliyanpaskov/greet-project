@@ -5,23 +5,17 @@
     margin-inline: auto;
     max-width: 76rem;
 
-    & .filter__sorter {
-        &__wrapper {
-            position: sticky;
-            top: 0.5rem;
-            width: 90%;
-            height: 4rem;
-            background: gs.$light-color;
-            border-radius: 1.5rem;
-            margin-inline: auto;
-            max-width: 75rem;
-            @include gs.shadow(10px, -3px, gs.$dark-shadow-color);
-            @include gs.display-flex(row, space-between, center);
-            padding: 1rem 2rem;
-        }
-
-        &__logo__wrapper {
-            width: 3rem;
-        }
+    &__form__wrapper {
+        position: sticky;
+        top: 0.3rem;
+        width: 90%;
+        height: 4rem;
+        background: gs.$light-color;
+        border-radius: 1.5rem;
+        margin-inline: auto;
+        max-width: 75rem;
+        @include gs.shadow(10px, -3px, gs.$dark-shadow-color);
+        @include gs.display-flex(row, space-between, center);
+        padding: 1rem 2rem;
     }
 }
