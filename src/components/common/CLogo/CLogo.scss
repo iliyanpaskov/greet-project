@@ -1,0 +1,25 @@
+@use '../../../global-styles/' as gs;
+
+.logo {
+    width: 100%;
+    @include gs.display-flex(row, space-between, center);
+    position: relative;
+
+    &>img {
+        width: 100%;
+    }
+
+    &>h4 {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -32%);
+        text-transform: uppercase;
+        // font-size: 1rem;
+        font-style: italic;
+        // -webkit-text-stroke: 1px #000;
+        @include gs.title(gs.$orange-color, 1rem);
+        
+        
+    }
+}

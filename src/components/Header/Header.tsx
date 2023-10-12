@@ -22,7 +22,6 @@ export const Header: React.FC<HeaderProps> = () => {
                 }
                 <h1>Музика</h1>
             </section>
-           
         </header>
     )
 }

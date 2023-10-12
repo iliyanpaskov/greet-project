@@ -5,15 +5,15 @@
     align-items: $items;
 }
 
-@mixin shadow ($blur, $spread ) {
-    box-shadow: 0px 0px $blur $spread rgba(0, 0, 0, 0.75);
-    -webkit-box-shadow: 0px 0px $blur $spread rgba(0, 0, 0, 0.75);
-    -moz-box-shadow: 0px 0px $blur $spread rgba(0, 0, 0, 0.75);
+@mixin shadow ($blur, $spread, $color ) {
+    box-shadow: 0px 0px $blur $spread $color;
+    -webkit-box-shadow: 0px 0px $blur $spread $color;
+    -moz-box-shadow: 0px 0px $blur $spread $color;
 }
 
-@mixin title ($color,$size){
+@mixin title ($color, $size) {
     color: $color;
     font-size: $size;
-    font-weight:700;
+    font-weight: 700;
     text-shadow: 3px 3px 5px #000;
 }

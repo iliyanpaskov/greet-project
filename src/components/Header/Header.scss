@@ -14,7 +14,7 @@ header {
         background: gs.$purple-color-transparent;
         display: grid;
         grid-template-columns: repeat(5, 1fr);
-        @include gs.shadow(15px, 2px);
+        @include gs.shadow(15px, 2px,gs.$dark-shadow-color);
 
         &>h1 {
             position: absolute;
