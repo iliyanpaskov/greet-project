@@ -7,6 +7,7 @@ import { SortAndFilterForm } from '../../components/SortAndFilterForm/SortAndFil
 import './MainPage.scss';
 import { ProductCard } from '../../components/ProductCard/ProductCard';
 import { CLoadingMoreProducts } from '../../components/common/CLoadingMoreProducts/CLoadingMoreProducts';
+import { CLoader } from '../../components/common/CLoader/CLoader';
 
 interface MainPageProps { }
 
@@ -37,26 +38,32 @@ export const MainPage: React.FC<MainPageProps> = () => {
     }, [pageNumber])
 
     return (
-        <main className='main'>
-            <section className='main__form__wrapper'>
-                <SortAndFilterForm />
-            </section>
-            <section className='main__products__list'>
-                {
-                    prooductsList.map((x) => <ProductCard key={x.id} product={x} />)
-                }
-            </section>
+        < main className='main' >
             {
-                pageNumber < 25 
-                    ? <div className='main__load__more__wrapper' ref={loadMore}>
+                prooductsList.length > 0
+                    ? <>
+                        <section className='main__form__wrapper'>
+                            <SortAndFilterForm />
+                        </section>
+                        <section className='main__products__list'>
+                            {
+                                prooductsList.map((x) => <ProductCard key={x.id} product={x} />)
+                            }
+                        </section>
                         {
-                            isLoading
-                                ? <CLoadingMoreProducts />
+                            pageNumber < 25
+                                ? <div className='main__load__more__wrapper' ref={loadMore}>
+                                    {
+                                        isLoading
+                                            ? <CLoadingMoreProducts />
+                                            : null
+                                    }
+                                </div>
                                 : null
                         }
-                    </div>
-                    : null
+                    </>
+                    : <CLoader />
             }
-        </main>
+        </main >
     )
 }
