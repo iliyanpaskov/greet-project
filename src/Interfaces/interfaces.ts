@@ -70,7 +70,8 @@ export interface IProduct {
 }
 
 export interface IProductsData {
-    products: IProduct[]
+    products: IProduct[];
+    allProducts:IProduct[];
 }
 
 export interface ICategory {

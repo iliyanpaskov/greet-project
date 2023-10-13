@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef, useCallback } from 'react';
-import { getAll, isLoaded } from '../../Redux/Products/ProductsSlice';
+import { currentCategory, fillterByCategory, getAll, isLoaded } from '../../Redux/Products/ProductsSlice';
 import { IProduct } from '../../Interfaces/interfaces';
 import { getAllProducts } from '../../Redux/Products/ProductsActions';
 import { useAppDispatch, useAppSelector } from '../../Redux/hooks';
@@ -17,6 +17,7 @@ export const MainPage: React.FC<MainPageProps> = () => {
     const [pageNumber, setPageNumber] = useState(1);
     const dispatch = useAppDispatch();
     const prooductsList: IProduct[] = useAppSelector(getAll);
+    const category = useAppSelector(currentCategory);
     const isLoading = useAppSelector(isLoaded);
     const observer = useRef();
 
@@ -32,11 +33,15 @@ export const MainPage: React.FC<MainPageProps> = () => {
             // @ts-expect-error
             observer.current.observe(node);
         };
+        if(category !== 15){
+            dispatch(fillterByCategory(category));
+        }
     }, [isLoading])
 
     useEffect(() => {
         dispatch(getAllProducts(pageNumber));
-        dispatch(getAllCategories())
+        dispatch(getAllCategories());
+       
     }, [pageNumber])
 
     return (
