@@ -8,6 +8,7 @@ import './MainPage.scss';
 import { ProductCard } from '../../components/ProductCard/ProductCard';
 import { CLoadingMoreProducts } from '../../components/common/CLoadingMoreProducts/CLoadingMoreProducts';
 import { CLoader } from '../../components/common/CLoader/CLoader';
+import { getAllCategories } from '../../Redux/Categories/CategoriesActions';
 
 interface MainPageProps { }
 
@@ -34,7 +35,8 @@ export const MainPage: React.FC<MainPageProps> = () => {
     }, [isLoading])
 
     useEffect(() => {
-        dispatch(getAllProducts(pageNumber))
+        dispatch(getAllProducts(pageNumber));
+        dispatch(getAllCategories())
     }, [pageNumber])
 
     return (
