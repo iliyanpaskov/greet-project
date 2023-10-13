@@ -4,6 +4,7 @@
     width: 90%;
     margin-inline: auto;
     max-width: 77rem;
+    position: relative;
 
     &__form__wrapper {
         position: sticky;
@@ -21,10 +22,21 @@
         padding: 1rem 2rem;
     }
 
-    &__products__list{
+    &__products__list {
+        min-height: 80vh;
         margin: 2rem 0;
         display: grid;
-        grid-template-columns: repeat(4,1fr);
+        grid-template-columns: repeat(4, 1fr);
         gap: 2rem;
+    }
+
+    &__load__more__wrapper {
+        position: static;
+        bottom: 0;
+        width: 100%;
+        min-height: 1rem;
+        text-align: center;
+        margin-inline: auto;
+        margin: 1rem;
     }
 }

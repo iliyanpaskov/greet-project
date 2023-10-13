@@ -30,14 +30,14 @@ export const productsSlice = createSlice({
                 state.currentCategory = '';
                 state.categories = [];
                 // @ts-expect-error
-                state.products = action.payload;
+                state.products =[...state.products, ...action.payload];
             })
             .addCase(getAllProducts.pending, (state) => {
                 state.isError = false;
                 state.isLoading = true;
-                state.currentCategory = '';
-                state.categories = [];
-                state.products = [];
+                // state.currentCategory = '';
+                // state.categories = [];
+                // state.products = [];
             })
             .addCase(getAllProducts.rejected, (state) => {
                 state.isError = true;
@@ -49,5 +49,6 @@ export const productsSlice = createSlice({
     }
 });
 
-export const getAll = (state:any) => state.products.products
+export const isLoaded = (state:any) =>state.products.isLoading;
+export const getAll = (state:any) => state.products.products;
 export const productsReducer = productsSlice.reducer;

@@ -1,0 +1,41 @@
+@use '../../../global-styles/' as gs;
+
+.loading__more {
+    width: 8rem;
+    margin-inline: auto;
+    @include gs.display-flex(row, space-between, center);
+    font-size: 1.2rem;
+    font-weight: 500;
+    font-style: italic;
+    text-shadow: (1px 1px 2px #999898);
+    color: gs.$orange-color;
+    letter-spacing: 0.2rem;
+    animation: showLoader 1.1s linear forwards;
+    animation-delay: 0.5;
+
+    &>svg {
+        font-size: 1.5rem;
+        animation: rotate 1s linear infinite;
+    }
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+};
+
+@keyframes showLoader {
+    0%{
+        transform: scale(0.2);
+        opacity: 0.5;
+    }
+    100%{
+        transform: scale(1);
+        opacity: 1;
+    }
+}
