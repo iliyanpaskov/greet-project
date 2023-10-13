@@ -6,9 +6,7 @@ const url = 'https://greet.bg/wp-json/wc/store/products?page=';
 export const getProducts = async (pageNumber:number): Promise<IProductsData> => {
     try {
         const response = await axios.get(`${url}${pageNumber}`);
-        console.log(response.data);
         return response.data;
-
     } catch (error: any) {
         throw error.response.data.message;
     }

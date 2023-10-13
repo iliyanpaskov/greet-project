@@ -1,6 +1,10 @@
 @use '../../../global-styles/' as gs;
 
-.category__filter{
-    @include gs.display-flex(row,space-between,center);
-    @include gs.select(14rem,gs.$orange-color,50%,none);
+.category__filter {
+    @include gs.display-flex(row, space-between, center);
+    @include gs.select(14rem, gs.$orange-color, 50%, none);
+
+    &>select option {
+        text-transform: capitalize;
+    }
 }

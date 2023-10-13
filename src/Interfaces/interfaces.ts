@@ -73,3 +73,23 @@ export interface IProductsData {
     products: IProduct[]
 }
 
+export interface ICategory {
+    id: number,
+    name: string;
+    slug: string;
+    description: string;
+    parent: number;
+    count: number;
+    image: null;
+    review_count: number;
+    permalink: string;
+}
+
+export interface ICategoriesData {
+    data: ICategory[];
+}
+
+export interface ICategoryFilter {
+    id: number;
+    name: string;
+}

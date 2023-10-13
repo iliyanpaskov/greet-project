@@ -38,10 +38,10 @@ export const MainPage: React.FC<MainPageProps> = () => {
     }, [pageNumber])
 
     return (
-        < main className='main' >
+        <div className='main__wrapper'>
             {
                 prooductsList.length > 0
-                    ? <>
+                    ? < main className='main' >
                         <section className='main__form__wrapper'>
                             <SortAndFilterForm />
                         </section>
@@ -61,9 +61,9 @@ export const MainPage: React.FC<MainPageProps> = () => {
                                 </div>
                                 : null
                         }
-                    </>
+                    </main >
                     : <CLoader />
             }
-        </main >
+        </div>
     )
 }

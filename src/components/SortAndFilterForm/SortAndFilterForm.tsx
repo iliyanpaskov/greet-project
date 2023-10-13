@@ -10,6 +10,7 @@ interface SortAndFilterFormProps {
 }
 
 export const SortAndFilterForm: React.FC<SortAndFilterFormProps> = () => {
+
     return (
         <form className='sort__filter__form'>
             <div className='logo__wrapper'>
