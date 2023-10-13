@@ -77,17 +77,18 @@ export interface IProductsData {
 export interface ICategory {
     id: number,
     name: string;
-    slug: string;
-    description: string;
-    parent: number;
-    count: number;
-    image: null;
-    review_count: number;
-    permalink: string;
+    slug?: string;
+    description?: string;
+    parent?: number;
+    count?: number;
+    image?: null;
+    review_count?: number;
+    permalink?: string;
 }
 
 export interface ICategoriesData {
     data: ICategory[];
+    headerCategory: ICategory |any;
 }
 
 export interface ICategoryFilter {

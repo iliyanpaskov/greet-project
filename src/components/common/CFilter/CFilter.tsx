@@ -5,13 +5,13 @@ import { ICategoryFilter, IProduct } from '../../../Interfaces/interfaces';
 import { BiFilter } from 'react-icons/bi'
 import './CFilter.scss';
 import { filterCategories } from '../../../Utils/utils';
+import { headerCategory, setCategory } from '../../../Redux/Categories/CategoriesSlice';
 
 interface CFilterProps { }
 
 export const CFilter: React.FC<CFilterProps> = () => {
 
     const [currentCategories, setCurrentCategories] = useState<ICategoryFilter[]>([]);
-    // const [category, setCategory] = useState(15);
     const products: IProduct[] = useAppSelector(getAll);
     const dispatch = useAppDispatch();
 
@@ -21,8 +21,9 @@ export const CFilter: React.FC<CFilterProps> = () => {
 
     const changeHandler = (e: React.FormEvent<HTMLSelectElement>) => {
         dispatch(changeCategory(Number(e.currentTarget.value)));
-        dispatch(showAll);
+        dispatch(showAll());
         dispatch(fillterByCategory(Number(e.currentTarget.value)));
+        dispatch(setCategory(Number(e.currentTarget.value)));
         if (Number(e.currentTarget.value) === 15) {
             dispatch(showAll());
         }
