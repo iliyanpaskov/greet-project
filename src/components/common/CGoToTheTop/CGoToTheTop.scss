@@ -1,0 +1,51 @@
+@use '../../../global-styles/' as gs;
+
+
+.pulse {
+    position: sticky;
+    bottom: 6%;
+    left:  93%;
+    width: 2.2rem;
+    height: 2.2rem;
+    border-radius: 50%;
+    background: gs.$orange-color;
+
+    &>a>svg {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 1.85rem;
+        color: gs.$purple-color;
+    }
+    
+    &__ring {
+        position: absolute;
+        background: inherit;
+        width: 100%;
+        height: 100%;
+        border-radius: 100%;
+        opacity: 0.8;
+        animation: pulsing 4s ease-out infinite;
+        
+        
+        &>.two {
+            animation-delay: -1s;
+        }
+        
+        &>.three {
+            animation-delay: -2s;
+        }
+        
+        &>.four {
+            animation-delay: -3s;
+        }
+    }
+}
+
+@keyframes pulsing {
+    100% {
+        transform: scale(1.7);
+        opacity: 0;
+    }
+}

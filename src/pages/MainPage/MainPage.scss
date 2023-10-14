@@ -36,12 +36,13 @@
     }
 
     &__load__more__wrapper {
+        @include gs.display-flex(row,center,center);
         position: static;
         bottom: 0;
         width: 100%;
         min-height: 6rem;
         text-align: center;
         margin-inline: auto;
-        margin: 1rem 0 2.5rem 0 ;
+        margin: 1rem  ;
     }
 }
