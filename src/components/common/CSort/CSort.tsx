@@ -1,18 +1,28 @@
 import React from 'react';
 import { BiSortDown } from 'react-icons/bi';
 import './CSort.scss';
+import { useAppDispatch } from '../../../Redux/hooks';
+import { sortProducts } from '../../../Redux/Products/ProductsSlice';
 
-interface CSortProps {}
+interface CSortProps { }
 
-export const CSort:React.FC<CSortProps> = () => {
+export const CSort: React.FC<CSortProps> = () => {
+
+  const dispatch = useAppDispatch();
+
+  const changeHandler = (e: React.FormEvent<HTMLSelectElement>) => {
+    dispatch(sortProducts(e.currentTarget.value));
+  }
+
   return (
-    <label htmlFor="sort" className='sort'> <h4>сортирай <BiSortDown/></h4>
-            <select name='sort' id='sort'>
-                <option value="1">Цена нарастваща </option>
-                <option value="2">Цена намаляваща</option>
-                <option value="3">Азбучен ред А-Я</option>
-                <option value="4">Азбучен ред Я-А</option>
-            </select>
-        </label>
+    <label htmlFor="sort" className='sort'> <h4>сортирай <BiSortDown /></h4>
+      <select name='sort' id='sort' onChange={changeHandler}>
+        <option value="slug-asc"></option>
+        <option value="slug-asc">Азбучен ред А&rarr;Я</option>
+        <option value="slug-desc">Азбучен ред Я&rarr;А</option>
+        <option value="price-asc">Цена нарастваща &uarr;</option>
+        <option value="price-desc">Цена намаляваща &darr;</option>
+      </select>
+    </label>
   )
 }

@@ -95,3 +95,9 @@ export interface ICategoryFilter {
     id: number;
     name: string;
 }
+
+export interface ISortParams {
+    pageNumber:number;
+    orderby?:string;
+    odrer?:string;
+}

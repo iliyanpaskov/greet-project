@@ -1,24 +1,23 @@
-import React, { useEffect, useState, useRef, useCallback } from 'react';
-import { currentCategory, fillterByCategory, getAll, isLoaded } from '../../Redux/Products/ProductsSlice';
+import React, { useEffect, useRef, useCallback } from 'react';
+import { getAll, isLoaded, setPageNumber, sortingParams } from '../../Redux/Products/ProductsSlice';
+import { useAppDispatch, useAppSelector } from '../../Redux/hooks';
 import { IProduct } from '../../Interfaces/interfaces';
 import { getAllProducts } from '../../Redux/Products/ProductsActions';
-import { useAppDispatch, useAppSelector } from '../../Redux/hooks';
 import { SortAndFilterForm } from '../../components/SortAndFilterForm/SortAndFilterForm';
-import './MainPage.scss';
 import { ProductCard } from '../../components/ProductCard/ProductCard';
 import { CLoadingMoreProducts } from '../../components/common/CLoadingMoreProducts/CLoadingMoreProducts';
 import { CLoader } from '../../components/common/CLoader/CLoader';
 import { getAllCategories } from '../../Redux/Categories/CategoriesActions';
+import './MainPage.scss';
 
 interface MainPageProps { }
 
 export const MainPage: React.FC<MainPageProps> = () => {
 
-    let [pageNumber, setPageNumber] = useState(1);
     const dispatch = useAppDispatch();
     const prooductsList: IProduct[] = useAppSelector(getAll);
-    const category = useAppSelector(currentCategory);
     const isLoading = useAppSelector(isLoaded);
+    const params = useAppSelector(sortingParams)
     const observer = useRef();
 
     const loadMore = useCallback((node: any) => {
@@ -28,25 +27,20 @@ export const MainPage: React.FC<MainPageProps> = () => {
         // @ts-expect-error
         observer.current = new IntersectionObserver(entries => {
             if (entries[0].isIntersecting) {
-               
-                setPageNumber(pageNumber++);
+                dispatch(setPageNumber());
             }
         })
         if (node) {
             // @ts-expect-error
             observer.current.observe(node);
         };
-        if (category !== 15) {
-            dispatch(fillterByCategory(category));
-        }
-    }, [isLoading])
-
+    }, [])
+    
     useEffect(() => {
-        dispatch(getAllProducts(pageNumber));
+        dispatch(getAllProducts(params));
         dispatch(getAllCategories());
-
-    }, [pageNumber])
-
+    }, [params])
+    
     return (
         <div className='main__wrapper'>
             {
@@ -57,11 +51,11 @@ export const MainPage: React.FC<MainPageProps> = () => {
                         </section>
                         <section className='main__products__list'>
                             {
-                                prooductsList.map((x) => <ProductCard key={x.id} product={x} />)
+                                prooductsList.map((x) => <ProductCard key={`${x.id}${x.images[0].id}`} product={x} />)
                             }
                         </section>
                         {
-                            pageNumber < 25
+                            params.pageNumber < 25
                                 ? <div className='main__load__more__wrapper' ref={loadMore}>
                                     {
                                         isLoading
