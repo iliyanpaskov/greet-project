@@ -1,6 +1,6 @@
 @use '../../global-styles/' as gs;
 
-.sort__filter__form {
+.sort__filter__section {
     @include gs.display-flex(row, space-between, center);
     width: 100%;
 
