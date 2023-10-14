@@ -12,10 +12,15 @@ export const Header: React.FC<HeaderProps> = () => {
 
     const products = useAppSelector(getAllSaved);
     const headerTitle = useAppSelector(headerCategory)[0];
-    const headerImages = products.slice(3, 8);
+    let headerImages: IProduct[] = []
+    if (products.length < 100) {
+        headerImages = products.slice(3, 8);
+    } else {
+        headerImages = products.slice(89, 94);
+    }
 
     return (
-        <header>
+        <header id='header'>
             <section className='image__wrapper'>
                 {
                     headerImages.map((x: IProduct) => <CHeagerImage key={x.images[0].srcset} imageUrl={x.images[0].src} altText={x.images[0].alt} />)

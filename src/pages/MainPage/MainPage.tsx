@@ -14,7 +14,7 @@ interface MainPageProps { }
 
 export const MainPage: React.FC<MainPageProps> = () => {
 
-    const [pageNumber, setPageNumber] = useState(1);
+    let [pageNumber, setPageNumber] = useState(1);
     const dispatch = useAppDispatch();
     const prooductsList: IProduct[] = useAppSelector(getAll);
     const category = useAppSelector(currentCategory);
@@ -22,18 +22,21 @@ export const MainPage: React.FC<MainPageProps> = () => {
     const observer = useRef();
 
     const loadMore = useCallback((node: any) => {
-        if (isLoading) return;
+        if (isLoading) {
+            return
+        };
         // @ts-expect-error
         observer.current = new IntersectionObserver(entries => {
             if (entries[0].isIntersecting) {
-                setPageNumber(num => num + 1);
+               
+                setPageNumber(pageNumber++);
             }
         })
         if (node) {
             // @ts-expect-error
             observer.current.observe(node);
         };
-        if(category !== 15){
+        if (category !== 15) {
             dispatch(fillterByCategory(category));
         }
     }, [isLoading])
@@ -41,7 +44,7 @@ export const MainPage: React.FC<MainPageProps> = () => {
     useEffect(() => {
         dispatch(getAllProducts(pageNumber));
         dispatch(getAllCategories());
-       
+
     }, [pageNumber])
 
     return (
