@@ -9,17 +9,17 @@
         width: 100%;
     }
 
-    &>h4 {
+    &>p {
         position: absolute;
         top: 50%;
         left: 50%;
-        transform: translate(-50%, -32%);
-        text-transform: uppercase;
-        // font-size: 1rem;
+        transform: translate(-50%, -15%);
+        text-transform: capitalize;
+        letter-spacing: 0.27rem;
         font-style: italic;
-        // -webkit-text-stroke: 1px #000;
-        @include gs.title(gs.$orange-color, 1rem);
-        
+        -webkit-text-stroke: 1px #000;
+        @include gs.title(gs.$orange-color, 1.1rem);
+        font-weight: 800;
         
     }
 }

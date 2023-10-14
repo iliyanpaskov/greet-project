@@ -54,7 +54,7 @@ export const MainPage: React.FC<MainPageProps> = () => {
                                 prooductsList.map((x) => <ProductCard key={x.id} product={x} />)
                             }
                         </section>
-                        {/* {
+                        {
                             params.pageNumber < 25
                                 ? <div className='main__load__more__wrapper' ref={loadMore}>
                                     {
@@ -64,7 +64,7 @@ export const MainPage: React.FC<MainPageProps> = () => {
                                     }
                                 </div>
                                 : null
-                        } */}
+                        }
                     </main >
                     : <CLoader />
             }

@@ -1,7 +1,7 @@
 @use '../../global-styles/' as gs;
 
 footer {
-    background: gs.$purple-color;
+    background: linear-gradient(220deg, gs.$purple-color 0%, gs.$orange-color 77%);
     padding: 3rem 4.5rem;
     @include gs.shadow(15px, 2px, gs.$dark-shadow-color);
     border-top-left-radius: 30%;
