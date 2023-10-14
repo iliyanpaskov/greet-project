@@ -15,6 +15,15 @@
         @include gs.shadow(13px, -2px, gs.$dark-shadow-color);
         z-index: 0;
 
+        @include gs.breakpoint(tablet-start,tablet-end){
+            width: 11rem;
+            height: 17rem;
+        };
+        @include gs.breakpoint(mobile-start,mobile-end){
+            width: 10rem;
+            height: 15rem;
+        };
+
         &:hover {
             cursor: pointer;
         }
@@ -36,7 +45,6 @@
             transition: 0.5s;
             opacity: 1;
         }
-
     }
 
     &__image {
@@ -64,6 +72,10 @@
             @include gs.title(gs.$light-color, 1.5rem);
             text-align: center;
             margin-bottom: 0.5rem;
+            
+            @include gs.breakpoint(mobile-start,mobile-end){
+                @include gs.title(gs.$light-color, 1rem);
+            };
         }
 
         &>.card__price {
@@ -73,6 +85,9 @@
             padding: 0.2rem 0.3rem; 
             font-size: 1rem;
             font-weight: 400;
+            @include gs.breakpoint(mobile-start,mobile-end){
+            font-size: 0.8rem
+            };
         }
     }
 

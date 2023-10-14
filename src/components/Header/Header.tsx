@@ -3,8 +3,8 @@ import { useAppSelector } from '../../Redux/hooks';
 import { getAllSaved } from '../../Redux/Products/ProductsSlice';
 import { IProduct } from '../../Interfaces/interfaces';
 import { CHeagerImage } from '../common/CHeagerImage/CHeagerImage';
-import './Header.scss';
 import { headerCategory } from '../../Redux/Categories/CategoriesSlice';
+import './Header.scss';
 
 interface HeaderProps { }
 

@@ -51,7 +51,7 @@ export const MainPage: React.FC<MainPageProps> = () => {
                         </section>
                         <section className='main__products__list'>
                             {
-                                prooductsList.map((x) => <ProductCard key={`${x.id}${x.images[0].id}`} product={x} />)
+                                prooductsList.map((x) => <ProductCard key={x.id} product={x} />)
                             }
                         </section>
                         {

@@ -5,8 +5,8 @@
     margin-inline: auto;
     max-width: 77rem;
     position: relative;
-    
-    &__wrapper{
+
+    &__wrapper {
         height: 100%;
         width: 100%;
     }
@@ -25,6 +25,14 @@
         @include gs.shadow(10px, -3px, gs.$dark-shadow-color);
         @include gs.display-flex(row, space-between, center);
         padding: 1rem 2rem;
+
+        @include gs.breakpoint(mobile-start, mobile-end) {
+            width: 20rem;
+            min-height: 5rem;
+            padding: 0.2rem;
+        }
+
+        ;
     }
 
     &__products__list {
@@ -33,16 +41,43 @@
         display: grid;
         grid-template-columns: repeat(4, 1fr);
         gap: 2rem;
+        justify-items: center;
+
+        @include gs.breakpoint(display-start, display-end) {
+            gap: 0.5rem
+        }
+
+        ;
+
+        @include gs.breakpoint(tablet-start, tablet-end) {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        ;
+
+        @include gs.breakpoint(mobile-start, mobile-end) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        ;
     }
 
     &__load__more__wrapper {
-        @include gs.display-flex(row,center,center);
+        @include gs.display-flex(row, center, center);
         position: static;
         bottom: 0;
         width: 100%;
         min-height: 6rem;
         text-align: center;
         margin-inline: auto;
-        margin: 1rem  ;
+        margin: 1rem;
+
+        @include gs.breakpoint(mobile-start, mobile-end) {
+            min-height: 4rem;
+            width: 80%;
+            margin-inline: auto;
+        }
+
+        ;
     }
 }

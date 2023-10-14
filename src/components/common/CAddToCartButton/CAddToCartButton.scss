@@ -20,8 +20,20 @@
         @include gs.display-flex(row, space-between, center);
         transition: 0.5s;
 
+        @include gs.breakpoint(mobile-start, mobile-end) {
+            width: 6.5rem;
+            padding: 0.2rem 0.5rem;
+            font-size: 0.9rem
+        }
+
+        ;
+
         &>svg {
             font-size: 1.3rem;
+
+            @include gs.breakpoint(mobile-start, mobile-end) {
+                font-size: 1.1rem;
+            }
         }
     }
 }

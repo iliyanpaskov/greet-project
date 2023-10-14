@@ -1,14 +1,18 @@
 @use '../../../global-styles/' as gs;
 
-
 .pulse {
     position: sticky;
     bottom: 6%;
-    left:  93%;
+    left: 93%;
     width: 2.2rem;
     height: 2.2rem;
     border-radius: 50%;
     background: gs.$orange-color;
+
+    @include gs.breakpoint(mobile-start, mobile-end) {
+        left: 80%;
+        bottom: 7%;
+    }
 
     &>a>svg {
         position: absolute;
@@ -18,7 +22,7 @@
         font-size: 1.85rem;
         color: gs.$purple-color;
     }
-    
+
     &__ring {
         position: absolute;
         background: inherit;
@@ -27,16 +31,16 @@
         border-radius: 100%;
         opacity: 0.8;
         animation: pulsing 4s ease-out infinite;
-        
-        
+
+
         &>.two {
             animation-delay: -1s;
         }
-        
+
         &>.three {
             animation-delay: -2s;
         }
-        
+
         &>.four {
             animation-delay: -3s;
         }
