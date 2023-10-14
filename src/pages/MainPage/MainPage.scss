@@ -31,8 +31,6 @@
             min-height: 5rem;
             padding: 0.2rem;
         }
-
-        ;
     }
 
     &__products__list {
@@ -47,19 +45,15 @@
             gap: 0.5rem
         }
 
-        ;
 
         @include gs.breakpoint(tablet-start, tablet-end) {
             grid-template-columns: repeat(3, 1fr);
         }
 
-        ;
-
         @include gs.breakpoint(mobile-start, mobile-end) {
             grid-template-columns: repeat(2, 1fr);
         }
 
-        ;
     }
 
     &__load__more__wrapper {
@@ -77,7 +71,5 @@
             width: 80%;
             margin-inline: auto;
         }
-
-        ;
     }
 }

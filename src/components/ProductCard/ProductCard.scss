@@ -15,14 +15,17 @@
         @include gs.shadow(13px, -2px, gs.$dark-shadow-color);
         z-index: 0;
 
-        @include gs.breakpoint(tablet-start,tablet-end){
+        @include gs.breakpoint(tablet-start, tablet-end) {
             width: 11rem;
             height: 17rem;
-        };
-        @include gs.breakpoint(mobile-start,mobile-end){
-            width: 10rem;
-            height: 15rem;
-        };
+        }
+
+        ;
+
+        @include gs.breakpoint(mobile-start, mobile-end) {
+            width: 8rem;
+            height: 14rem;
+        }
 
         &:hover {
             cursor: pointer;
@@ -72,22 +75,23 @@
             @include gs.title(gs.$light-color, 1.5rem);
             text-align: center;
             margin-bottom: 0.5rem;
-            
-            @include gs.breakpoint(mobile-start,mobile-end){
-                @include gs.title(gs.$light-color, 1rem);
-            };
+
+            @include gs.breakpoint(mobile-start, mobile-end) {
+                @include gs.title(gs.$light-color, 0.5rem);
+            }
         }
 
         &>.card__price {
             @include gs.display-flex(row, center, center);
             margin-bottom: 0.5rem;
             background: gs.$light-color-transparent;
-            padding: 0.2rem 0.3rem; 
+            padding: 0.2rem 0.3rem;
             font-size: 1rem;
             font-weight: 400;
-            @include gs.breakpoint(mobile-start,mobile-end){
-            font-size: 0.8rem
-            };
+
+            @include gs.breakpoint(mobile-start, mobile-end) {
+                font-size: 0.8rem
+            }
         }
     }
 

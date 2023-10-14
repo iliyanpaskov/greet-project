@@ -1,0 +1,25 @@
+@use '../../global-styles/' as gs;
+
+footer {
+    background: gs.$purple-color;
+    padding: 3rem 4.5rem;
+    @include gs.shadow(15px, 2px, gs.$dark-shadow-color);
+    border-top-left-radius: 30%;
+    border-bottom-right-radius: 30%;
+    @include gs.display-flex(row, space-between, center);
+
+    &>div {
+        width: 8rem;
+    }
+
+    &>article {
+        max-width: 80%;
+        margin-left: 1rem;
+
+        &>p {
+            text-align: center;
+            color: gs.$light-color;
+            font-style: italic;
+        }
+    }
+}
