@@ -35,12 +35,12 @@ export const MainPage: React.FC<MainPageProps> = () => {
             observer.current.observe(node);
         };
     }, [])
-    
+
     useEffect(() => {
         dispatch(getAllProducts(params));
         dispatch(getAllCategories());
     }, [params])
-    
+
     return (
         <div className='main__wrapper'>
             {

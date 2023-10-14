@@ -1,27 +1,30 @@
-# React + TypeScript + Vite
+# Greet Project 
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Generated with:
 
-Currently, two official plugins are available:
+- [React](https://react.dev/) version 18.2.0
+- [TypeScript](https://www.typescriptlang.org/) version 5.1.3
+- [Redux Toolkit](https://redux-toolkit.js.org/) version 8.1.3
+- [Axios](https://axios-http.com/docs/intro) version 1.5.1
+- [SASS/SCSS](https://sass-lang.com/install/) version 1.69.0
+- [Vite](https://vitejs.dev/) version 4.4.5
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## Expanding the ESLint configuration
+## Project Information
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- Greetings SPA project 
+- The header component contains a photo background, and current category title that changes dynamically.
+- The response from API calls is presented as cards. Each one of them is a reusable component. It contains an image, name, description, all product categories, and an "Add to cart" button. When a user clicks the button it leads him to order the product destination.
+- A product list with pagination is implemented with infinite scrolling.
+- There are sort and filter select components. With the Filter component, a user can choose which products to display by changing the filter component value. All filter component category options are dynamically populated. By changing the Sort component value user sends new API requests and sorts all products alphabetically, and by price(ascending and descending order)
+- Responsive design.
 
-- Configure the top-level `parserOptions` property like this:
-
+### To start the project
 ```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
+   npm run dev
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+### Front-End
+Deployed in Netlify You can visit it [here]().
+
+#### Responsive Web Design

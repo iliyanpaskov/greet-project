@@ -71,7 +71,7 @@ export interface IProduct {
 
 export interface IProductsData {
     products: IProduct[];
-    allProducts:IProduct[];
+    allProducts: IProduct[];
 }
 
 export interface ICategory {
@@ -88,7 +88,7 @@ export interface ICategory {
 
 export interface ICategoriesData {
     data: ICategory[];
-    headerCategory: ICategory |any;
+    headerCategory: ICategory | any;
 }
 
 export interface ICategoryFilter {
@@ -97,7 +97,7 @@ export interface ICategoryFilter {
 }
 
 export interface ISortParams {
-    pageNumber:number;
-    orderby?:string;
-    odrer?:string;
+    pageNumber: number;
+    orderby?: string;
+    odrer?: string;
 }

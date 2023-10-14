@@ -3,16 +3,16 @@
 .header__image__wrapper {
     height: 21rem;
     z-index: -1;
-    @include gs.breakpoint(mobile-start,mobile-end){
+
+    @include gs.breakpoint(mobile-start, mobile-end) {
         height: 12rem;
-    };
-    
+    }
+
     &>img {
         height: 100%;
-        @include gs.display-flex(column,flex-start,flex-start);
+        @include gs.display-flex(column, flex-start, flex-start);
         width: 100%;
         object-fit: cover;
         object-position: top;
-        
     }
 }

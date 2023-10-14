@@ -8,6 +8,7 @@
     height: 2.2rem;
     border-radius: 50%;
     background: gs.$orange-color;
+    margin-bottom: 1rem;
 
     @include gs.breakpoint(mobile-start, mobile-end) {
         left: 80%;
@@ -31,7 +32,6 @@
         border-radius: 100%;
         opacity: 0.8;
         animation: pulsing 4s ease-out infinite;
-
 
         &>.two {
             animation-delay: -1s;

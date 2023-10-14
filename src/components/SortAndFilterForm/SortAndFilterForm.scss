@@ -6,13 +6,14 @@
 
     &>.logo__wrapper {
         width: 3rem;
-        @include gs.breakpoint(mobile-start,mobile-end){
+
+        @include gs.breakpoint(mobile-start, mobile-end) {
             display: none
-        };
+        }
     }
 
-    @include gs.breakpoint(mobile-start,mobile-end){
-        @include gs.display-flex(column,space-between,center);
+    @include gs.breakpoint(mobile-start, mobile-end) {
+        @include gs.display-flex(column, space-between, center);
         height: 100%;
-    };
+    }
 }

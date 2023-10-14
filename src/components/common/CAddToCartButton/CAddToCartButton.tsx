@@ -3,7 +3,7 @@ import { BiCartAdd } from 'react-icons/bi';
 import './CAddToCartButton.scss';
 
 interface CAddToCartButtonProps {
-    id:number
+    id: number
 }
 
 export const CAddToCartButton: React.FC<CAddToCartButtonProps> = ({

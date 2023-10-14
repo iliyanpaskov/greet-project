@@ -3,7 +3,6 @@ import './CGoToTheTop.scss';
 
 export const CGoToTheTop = () => {
     return (
-
         <div className='pulse'>
             <div className="pulse__ring one"></div>
             <div className="pulse__ring two"></div>

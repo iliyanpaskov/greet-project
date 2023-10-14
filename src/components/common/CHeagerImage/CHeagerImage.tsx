@@ -2,11 +2,11 @@ import React from 'react';
 import './CHeaderImage.scss';
 
 interface CHeaderImageProps {
-    imageUrl:string;
-    altText:string;
+    imageUrl: string;
+    altText: string;
 }
 
-export const CHeagerImage: React.FC<CHeaderImageProps> = ({ 
+export const CHeagerImage: React.FC<CHeaderImageProps> = ({
     imageUrl,
     altText
 }) => {

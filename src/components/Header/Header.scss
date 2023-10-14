@@ -6,11 +6,12 @@ header {
     height: 21rem;
     @include gs.display-flex(column, space-between, center);
     margin-bottom: 2rem;
-    @include gs.breakpoint(mobile-start,mobile-end){
+
+    @include gs.breakpoint(mobile-start, mobile-end) {
         height: 12rem;
         width: 97%;
-        margin-inline:auto; 
-    };
+        margin-inline: auto;
+    }
 
     &>.image__wrapper {
         position: relative;
@@ -19,11 +20,11 @@ header {
         background: gs.$purple-color-transparent;
         display: grid;
         grid-template-columns: repeat(5, 1fr);
-        @include gs.shadow(15px, 2px,gs.$dark-shadow-color);
+        @include gs.shadow(15px, 2px, gs.$dark-shadow-color);
 
-        @include gs.breakpoint(mobile-start,mobile-end){
+        @include gs.breakpoint(mobile-start, mobile-end) {
             height: 12rem;
-        };
+        }
 
         &>h1 {
             position: absolute;
@@ -31,12 +32,10 @@ header {
             left: 50%;
             transform: translate(-50%, -50%);
             @include gs.title(#fff, 4.5rem);
-            @include gs.breakpoint(mobile-start,mobile-end){
+
+            @include gs.breakpoint(mobile-start, mobile-end) {
                 @include gs.title(#fff, 3.5rem);
-            };
+            }
         }
     }
-
-   
-
 }

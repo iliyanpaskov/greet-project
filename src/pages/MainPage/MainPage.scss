@@ -54,7 +54,6 @@
         @include gs.breakpoint(mobile-start, mobile-end) {
             grid-template-columns: repeat(2, 1fr);
         }
-
     }
 
     &__load__more__wrapper {
