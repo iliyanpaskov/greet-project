@@ -21,8 +21,8 @@
         }
 
         @include gs.breakpoint(mobile-start, mobile-end) {
-            width: 8rem;
-            height: 14rem;
+            width: 8.5rem;
+            height: 13.3rem;
         }
 
         &:hover {
@@ -75,7 +75,7 @@
             margin-bottom: 0.5rem;
 
             @include gs.breakpoint(mobile-start, mobile-end) {
-                @include gs.title(gs.$light-color, 0.5rem);
+                @include gs.title(gs.$light-color, 0.7rem);
             }
         }
 
@@ -105,6 +105,12 @@
         overflow: auto;
         margin-bottom: 2rem;
 
+        &>div>h4{
+            @include gs.breakpoint(mobile-start, mobile-end) {
+                font-size: 0.75rem
+            }
+        }
+        
         &>div>p {
             margin-top: 0.5rem;
             font-size: 0.7rem;
