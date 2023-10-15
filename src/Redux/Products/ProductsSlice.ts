@@ -67,6 +67,9 @@ export const productsSlice = createSlice({
                     // @ts-expect-error
                     action.payload.forEach(x => x.categories.forEach(y => y.id === state.currentCategory ? filteredPayload.push(x) : x));
                     state.products = [...state.products, ...filteredPayload]
+                    if (filteredPayload.length <= 0 && state.sortParams.pageNumber < 25) {
+                        state.sortParams.pageNumber = state.sortParams.pageNumber + 1;
+                    }
                 }
                 // @ts-expect-error
                 state.allProducts = [...state.allProducts, ...action.payload];
